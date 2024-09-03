@@ -1,0 +1,104 @@
+<html>
+  <head>
+    <style>
+      img,
+      .boxed {
+        width: 150px;
+      }
+
+      div,
+      .logo {
+        display: flex;
+        
+      }
+
+      .Obi {color: darkgoldenrod;
+
+      }
+      body {
+        background-color: rgb(127, 30, 82);
+        
+      }
+
+      header {
+        font-size: 100px;
+        color: goldenrod;
+      }
+
+      h1, h2, p, label {color:goldenrod;}
+
+      #Beef {
+        border: solid rgb(90, 82, 82) 10px;
+        border-color: blanchedalmond;
+        border-radius: 5px;
+      }
+
+      #Chicken {
+        border: solid rgb(70, 66, 66) 10px;
+        border-color: blanchedalmond;
+        border-radius: 5px;
+      }
+
+      #vege {
+        border: solid rgb(106, 100, 100) 10px;
+        border-color: blanchedalmond;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo">
+      <header>BigBossBurritos</header>
+      <img src="HatchfulExport-All/logo.png" class="Logo" />
+    </div>
+    <div><section id="Beef">
+      <h1>Beef Burrito</h1>
+      <img src="Beef-Burritos.jpg" class="Boxed" />
+      <p>
+        Beef burrito with beef, rice, beans, avocado, cheese, lettuce, and
+        tomato.
+      </p>
+      <h2>Standard 12.95$ / Large 15.95$</h2>
+      <label for="quantity">Quantity(Standard) (between 1 and 10):</label>
+      <input type="number" id="quantity" name="quantity" min="1" max="10" />
+      <label for="quantity">Quantity(large)(between 1 and 10):</label>
+      <input type="number" id="quantity" name="quantity" min="1" max="10" />
+    </section></div>
+    <div><section id="Chicken">
+      <h1>Chicken Burrito</h1>
+      <img src="chicken burrito.jpeg" class="boxed" />
+      <p>
+        Chicken burrito with chicken, rice, beans, avocado, cheese, lettuce and
+        tomato.
+      </p>
+      <h2>Standard 13.95$ / Large 16.95$</h2>
+      <label for="quantity">Quantity (standard)(between 1 and 10):</label>
+      <input type="number" id="quantity" name="quantity" min="1" max="10" />
+      <label for="quantity">Quantity (large)(between 1 and 10):</label>
+      <input type="number" id="quantity" name="quantity" min="1" max="10" />
+    </section></div>
+    <div>
+    <section id="Vege">
+      <h1>Vegetarian Burrito</h1>
+      <img src="Vegan-Burritos-003s.jpg" class="boxed" />
+      <p>
+        Vegetarian Burrito with your choice of rice, beans, cheese, lettuce,
+        tomato, carrot, falafel.
+      </p>
+      <h2>Standard 11.95$ Large 14.95$</h2>
+      <label for="quantity">Quantity (standard)(between 1 and 10):</label>
+      <input type="number" id="quantity" name="quantity" min="1" max="10" />
+      <label for="quantity">Quantity (large) (between 1 and 10):</label>
+      <input type="number" id="quantity" name="quantity" min="1" max="10" />
+    </section></div>
+    <h2>Order Summary</h2>
+
+    <input type="text" name="finalorder"/>
+
+    <p class ="Obi">Total order : 1 standard chicken, 1 large beef, 2 standard vegetarian.
+      Total price = 53.80$
+    </p>
+
+    <button>Place Order</button>
+  </body>
+</html>
