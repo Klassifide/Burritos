@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Summary with Add to Cart Buttons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .product:last-child {
+            border-bottom: none;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .add-btn {
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .add-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .summary {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #333;
+            text-align: right;
+        }
+
+        .total {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Products</h1>
+
+        <div class="product">
+            <div class="product-info">
+                <div class="product-title">Product 1</div>
+                <div class="product-options">Color: Red, Size: M</div>
+            </div>
+            <button class="add-btn" onclick="addToOrder(20.00)">Add for $20.00</button>
+        </div>
+
+        <div class="product">
+            <div class="product-info">
+                <div class="product-title">Product 2</div>
+                <div class="product-options">Color: Blue, Size: L</div>
+            </div>
+            <button class="add-btn" onclick="addToOrder(35.00)">Add for $35.00</button>
+        </div>
+
+        <div class="product">
+            <div class="product-info">
+                <div class="product-title">Product 3</div>
+                <div class="product-options">Color: Black, Size: XL</div>
+            </div>
+            <button class="add-btn" onclick="addToOrder(45.00)">Add for $45.00</button>
+        </div>
+
+        <div class="summary">
+            <div class="total">Total: $<span id="total-price">0.00</span></div>
+        </div>
+    </div>
+
+    <script>
+        let totalPrice = 0;
+
+        function addToOrder(price) {
+            totalPrice += price;
+            document.getElementById('total-price').textContent = totalPrice.toFixed(2);
+        }
+    </script>
+
+</body>
+
+</html>
