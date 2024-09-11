@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BigBossBurritos</title>
+    <style>
+      .product {
+        margin-bottom: 10px;
+      }
+      #summary {
+        margin-top: 20px;
+      }
+
+      body {
+        display: flex;
+        flex-direction: row;
+      }
+
+      img {
+        width: 150px;
+        margin: auto;
+      }
+
+      h1 {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        color: rgb(215, 188, 14);
+      }
+
+      h2 {
+        color: darkgoldenrod;
+      }
+
+      h3,
+      h4 {
+        color: darkgoldenrod;
+        border: solid beige 10px;
+        max-width: 300px;
+        background-color: rgb(127, 30, 82);
+        margin: 5px;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      p {color:beige}
+
+      .Logo {
+        font-size: larger;
+      }
+
+      .Beef {
+        border: solid beige 10px;
+        max-width: 300px;
+        background-color: rgb(127, 30, 82);
+        margin: 5px;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .Chicken {
+        border: solid beige 10px;
+        max-width: 300px;
+        background-color: rgb(127, 30, 82);
+        margin: 5px;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .Vege {
+        border: solid beige 10px;
+        max-width: 300px;
+        background-color: rgb(127, 30, 82);
+        margin: 5px;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      #hdr {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 90%;
+      }
+
+      ul {
+        border: solid beige 10px;
+        color: darkgoldenrod;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <header id="hdr"><h1>BigBossBurritos</h1></header>
+      <img src="../Burritos/Burrito Logo.png" class="Logo" />
+    </div>
+
+    <div class="Beef">
+      <h1>Beef Burrito</h1>
+      <img src="../Burritos/Beef-Burritos.jpg" class="Boxed" />
+      <p>
+        Beef burrito with beef, rice, beans, avocado, cheese, lettuce, and
+        tomato.
+      </p>
+      <div class="product">
+        <button onclick="addToSummary('StandardBeef', 10)">
+          <h2>StandardBeef - $10</h2>
+        </button>
+      </div>
+      <div class="product">
+        <button onclick="addToSummary('LargeBeef', 15)">
+          <h2>LargeBeef - $15</h2>
+        </button>
+      </div>
+    </div>
+
+    <div class="Chicken">
+      <h1>Chicken Burrito</h1>
+      <img src="../Burritos/chicken burrito.jpeg" class="boxed" />
+      <p>
+        Chicken burrito with chicken, rice, beans, avocado, cheese, lettuce and
+        tomato.
+      </p>
+
+      <div class="product">
+        <button onclick="addToSummary('StandardChicken', 10)">
+          <h2>StandardChicken - $10</h2>
+        </button>
+      </div>
+      <div class="product">
+        <button onclick="addToSummary('LargeChicken ', 15)">
+          <h2>LargeChicken - $15</h2>
+        </button>
+      </div>
+    </div>
+    <div class="Vege">
+      <h1>Vegetarian Burrito</h1>
+      <img src="../Burritos/Vegan-Burritos-003s.jpg" class="boxed" />
+      <p>
+        Vegetarian Burrito with your choice of rice, beans, cheese, lettuce,
+        tomato, carrot, falafel.
+      </p>
+
+      <div class="product">
+        <button onclick="addToSummary('StandardVege', 10)">
+          <h2>StandardVege - $10</h2>
+        </button>
+      </div>
+      <div class="product">
+        <button onclick="addToSummary('LargeVege', 15)">
+          <h2>LargeVege - $15</h2>
+        </button>
+      </div>
+    </div>
+
+    <div>
+      <h3>Order Summary:</h3>
+      <ul id="order-summary"></ul>
+      <h4>Total: $<span id="total-price">0</span></h4>
+    </div>
+    <script>
+      let total = 0;
+
+      function addToSummary(product, price) {
+        // Add item to the summary list
+        const orderSummary = document.getElementById("order-summary");
+        const listItem = document.createElement("li");
+        listItem.textContent = `${product} - $${price}`;
+        orderSummary.appendChild(listItem);
+
+        // Update total price
+        total += price;
+        document.getElementById("total-price").textContent = total.toFixed(2);
+      }
+    </script>
+  </body>
+</html>
